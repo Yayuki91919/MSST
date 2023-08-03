@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // convert illegal input value to ligal value formate
 function text_input($value) {
 	$value = trim($value);
@@ -90,7 +90,8 @@ if(isset($_POST['submit']))
 		$token=rand(100000,999999);
 		$status=$register_controller->addUser($name,$email,$password,$cpassword,$token,$filename);
 		if($status){
-		echo "<script>location.href='email_otp.php?email=$email'</script>";
+			$_SESSION['email']=$email;
+		echo "<script>location.href='email_otp.php'</script>";
 		}
 	}
 }

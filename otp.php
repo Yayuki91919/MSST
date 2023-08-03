@@ -3,7 +3,7 @@ session_start();
 include_once __DIR__.'/layouts/header.php';
 include __DIR__.'/controller/registerController.php';
 include __DIR__.'/controller/passresetController.php';
-
+error_reporting(0);
 $email=$_SESSION['email'];
 $type=$_GET['type'];
 $register_controller=new RegisterController();

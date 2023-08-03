@@ -36,6 +36,7 @@ class RegisterController extends Register{
         
         #Server Settings
         $message=$token;
+        $to=$email;
         $mailer=new PHPMailer(true);
         //$mailer->SMTPDebug = SMTP::DEBUG_OFF;
         $mailer->isSMTP();
@@ -47,7 +48,7 @@ class RegisterController extends Register{
         $mailer->Password="xzplmjpnbsfgzoat";
 
         $mailer->setFrom('yay169153@gmail.com','MMST');
-        $mailer->addAddress('sulattwaddy440@gmail.com','Dear Customer');
+        $mailer->addAddress($to,'Dear Customer');
 
         $mailer->Subject="Hello! Dear customer!";
         $mailer->Body="Your code - ".$message;
