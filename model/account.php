@@ -21,6 +21,44 @@ class Account{
              return false;
          }
     }
+    public function getUser($acc_id){
+        //1.db connection
+        $con=Database::connect();
+        $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        //2. write sql
+        $sql="select *,users.id as uid from accounts join users where accounts.account_type_id=:id and accounts.users_id=users.id ";
+        $statement=$con->prepare($sql);
+        $statement->bindParam(':id',$acc_id);
+       //3. sql excute
+    if($statement->execute())
+    {
+    //4. result
+    //date fetch()==>one row, fetchall()==>multiple row
+        $result=$statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    return $result;
+   }
+
+   public function deleteAccount($id){
+     //1.db connection
+     $con=Database::connect();
+     $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+     //2. write sql
+     $sql='delete from accounts where users_id=:id';
+     $statement=$con->prepare($sql);   
+     $statement->bindParam(':id',$id);
+     try{
+        $statement->execute();
+     }
+     catch(PDOException $e)
+     {
+        return false;
+     }
+     if($statement->execute())
+     {
+      return true;
+     }
   
+}
 }
 ?>

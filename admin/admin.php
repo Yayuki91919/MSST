@@ -5,14 +5,14 @@ include_once __DIR__ . '/../controller/accountsController.php';
 
 $users_controller = new RegisterController();
 $acc_controller = new AccountsController();
-$acc_id=2;
+$acc_id=1;
 $users = $acc_controller->getUserAccount($acc_id);
 ?>
 
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title my-2">Users</h4>
+                <h4 class="card-title my-2">Admins</h4>
                 <p class="card-description"> Admin<code>/users</code></p>
 
                 <a class="btn btn-outline-success my-3" href="register.php">Add New User +</a>
@@ -44,7 +44,8 @@ $users = $acc_controller->getUserAccount($acc_id);
                             echo "<td><img src='../uploads/".$user['image']."' alt='' style='width: 60px;height:80px;' class='rounded-0'></td>";
                             echo '<td>' . $user['created_at'] . '</td>';
                             echo '<td>' . $user['updated_at'] . '</td>';
-                            echo '<td><a class="btn btn-outline-primary mx-3" href="user_edit.php?id='.$user['id'].'&type=user">Edit</a>';
+                            echo '<td id='.$user['uid'].'><a class="btn btn-outline-primary mx-3" href="user_edit.php?id='.$user['id'].'&type=admin">Edit</a>
+                                <a class="delete_user btn btn-outline-danger">Delete</a></td>';
                             echo '</tr>';
                         }
                         ?>

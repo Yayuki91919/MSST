@@ -86,7 +86,7 @@ if(isset($_POST['submit']))
 		$imageErr="Please choose your profile picture!";
 	}	
 	 
-	if(empty($nameErr) && empty($passErr)&& empty($cpassErr) && empty($imageErr)){
+	if(empty($nameErr) && empty($emailErr) && empty($passErr)&& empty($cpassErr) && empty($imageErr)){
 		$token=rand(100000,999999);
 		$status=$register_controller->addUser($name,$email,$password,$cpassword,$token,$filename);
 		if($status){

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.themFe.default.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
-
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -62,13 +62,21 @@
                 </a>
             </li>
             <li class="nav-item menu-items">
-                <a class="nav-link" href="app_user.php">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
                 <i class="mdi mdi-account-multiple-plus"></i>
               </span>
-                    <span class="menu-title">Users</span>
-                </a>
-            </li>
+              <span class="menu-title">Accounts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item menu-items"> <a class="nav-link" href="register.php">Register</a></li>
+                <li class="nav-item menu-items"> <a class="nav-link" href="app_user.php">Users</a></li>
+                <li class="nav-item menu-items"> <a class="nav-link" href="admin.php">Admins</a></li>
+              </ul>
+            </div>
+          </li>
             <li class="nav-item menu-items">
                 <a class="nav-link" href="app_brands.php">
               <span class="menu-icon">
@@ -85,14 +93,7 @@
                     <span class="menu-title">Models</span>
                 </a>
             </li>
-            <li class="nav-item menu-items">
-                <a class="nav-link" href="register.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-account-multiple-outline"></i>
-              </span>
-                    <span class="menu-title">Register</span>
-                </a>
-            </li>
+          
 
         </ul>
     </nav>

@@ -38,7 +38,8 @@
 <script src="../assets/js/dashboard.js"></script>
 <script src="../assets/js/myscript.js"></script>
 <!-- End custom js for this page -->
-
+<script src="../assets/js/my_script.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
 <!-- for delete btn with ajax -->
 <script>
     $(document).ready(function() {
